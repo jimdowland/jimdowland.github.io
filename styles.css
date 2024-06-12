@@ -117,7 +117,6 @@ nav {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
     object-fit: contain;
-    
 }
 
 .carousel img.active {
@@ -241,4 +240,9 @@ footer {
     .hamburger-menu {
         font-size: 4vw; /* Adjust font size for medium screens */
     }
+
+    .carousel {
+        height:800px;
+    }
+    
 }
