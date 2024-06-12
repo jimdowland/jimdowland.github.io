@@ -1,0 +1,238 @@
+body {
+    font-family: 'Merriweather', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f8;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure body takes up at least the full viewport height */
+}
+
+header {
+    background-color: #fff;
+    color: rgb(29, 29, 29);
+    padding: 30px 40px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main {
+    flex-grow: 1; /* Allow main content to grow and take up remaining space */
+}
+
+.banner {
+    text-align: center;
+    flex-grow: 1;
+}
+
+.banner h1 {
+    margin: 0;
+    font-size: 2vw; /* Responsive font size */
+    font-weight: 300; /* Use Merriweather Light for the banner */
+}
+
+nav {
+    display: flex;
+    align-items: center; /* Center items vertically */
+}
+
+.hamburger-menu {
+    display: block; /* Make sure it's visible */
+    cursor: pointer;
+    font-size: 2.4vw; /* Responsive font size */
+    order: -1; /* Move to the left side */
+}
+
+#overlay-nav {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#overlay-nav.active {
+    display: flex;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+#overlay-nav-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#overlay-nav-links li {
+    margin: 20px 0;
+}
+
+#overlay-nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+.portfolio-section{position:relative;}
+
+.carousel-container {
+    position: relative;
+    max-width: 750px;
+    margin: 50px auto;
+    overflow: hidden;
+    height: auto; /* Allow the height to adjust based on the content */
+    text-align: center; /* Center the buttons horizontally */
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height:700px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center; 
+}
+
+.carousel img {
+    display: none;
+    max-width: 750px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    object-fit: contain;
+}
+
+.carousel img.active {
+    display: block;
+    opacity: 1;
+}
+
+.prev, .next {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight:100;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.prev {
+    left: 10px; /* Adjust left position as needed */
+}
+
+.next {
+    right: 10px; /* Adjust right position as needed */
+}
+
+.contact-section {
+    text-align: center;
+    margin: 80px auto;
+    border-radius: 10px;
+    max-width: 600px;
+    font-family: 'Lato', sans-serif; /* Use Lato for paragraphs */
+    font-weight: 300; /* Use Lato Light */
+    line-height: 1.7em;
+}
+
+.contact-button {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid black;
+    padding: 10px 20px;
+    margin: 10px 0;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.contact-button:hover {
+    background-color: #555;
+}
+
+.contact-section img {
+    width: 20px;
+    height: 20px;
+    margin-top: 10px; /* Ensure the icon is below the button */
+}
+
+footer {
+    background:white;
+    color: #000;
+    text-align: center;
+    padding: 10px 0;
+    flex-shrink: 0; /* Prevent footer from shrinking */
+    font-family: 'Lato', sans-serif; /* Use Lato for paragraphs */
+    font-weight: 300; /* Use Lato Light */
+    font-size: 12px;
+}
+
+/* Media query for mobile view */
+@media (max-width: 768px) {
+    header {
+        padding: 10px 20px;
+    }
+
+    .banner h1 {
+        font-size: 2vw; /* Adjust font size for smaller screens */
+    }
+
+    .hamburger-menu {
+        font-size: 3vw; /* Adjust font size for smaller screens */
+    }
+
+    .carousel-container {
+        max-width: 90%;
+        margin: 40px auto;
+    }
+
+    .prev, .next {
+        font-size: 12px; /* Adjust font size for smaller screens */
+        padding: 5px; /* Adjust padding for smaller screens */
+    }
+
+    .prev {
+        left: 10px;
+    }
+
+    .next {
+        right: 10px;
+    }
+
+    .contact-button {
+        font-size: 2vw;
+    }
+
+    .contact-section img {
+        width: 20px;
+        height: 20px
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .banner h1 {
+        font-size: 1.75vw; /* Adjust font size for medium screens */
+    }
+
+    .hamburger-menu {
+        font-size: 3vw; /* Adjust font size for medium screens */
+    }
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>James Scott - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&family=Playfair+Display:wght@400&family=Lato:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="hamburger-menu" id="hamburger-menu">
+                ☰
+            </div>
+        </nav>
+        <div class="banner">
+            <h1>James Scott</h1>
+        </div>
+    </header>
+    <div id="overlay-nav">
+        <div class="close-btn">&times;</div>
+        <ul id="overlay-nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+    <main>
+        <section class="portfolio-section">
+            <div class="carousel-container">
+                <div class="carousel" id="carousel">
+                    <!-- Add your images here -->
+                    <img src="assets/test3.jpg" alt="alt tag here" title="my title" class="active">
+                    <img src="assets/test2.jpg" alt="alt tag here" title="my title">
+                    <img src="assets/test1.jpg" alt="alt tag here" title="my title">
+
+                    <!-- Add up to 15 images -->
+                </div>
+            </div>
+            <button class="prev" id="prev">&#10094;</button>
+            <button class="next" id="next">&#10095;</button>
+        </section>
+        <section class="contact-section">
+            <p>I'm a street, lifestyle and travel photographer based in Winchester, Hampshire in the South East of
+                England.</p>
+            <button class="contact-button" onclick="location.href='mailto:your-email@example.com'">Contact
+                Me</button><br />
+            <a href="https://www.instagram.com/yourprofile" target="_blank">
+                <img src="assets/instagram_i.png" alt="Instagram">
+            </a>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 James Scott. All Rights Reserved.</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
