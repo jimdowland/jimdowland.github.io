@@ -193,11 +193,11 @@ footer {
     }
 
     .banner h1 {
-        font-size: 2vw; /* Adjust font size for smaller screens */
+        font-size: 3vw; /* Adjust font size for smaller screens */
     }
 
     .hamburger-menu {
-        font-size: 3vw; /* Adjust font size for smaller screens */
+        font-size: 3.5vw; /* Adjust font size for smaller screens */
     }
 
     .carousel {
