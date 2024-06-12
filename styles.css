@@ -209,6 +209,7 @@ footer {
         margin: 40px auto;
     }
 
+
     .prev, .next {
         font-size: 12px; /* Adjust font size for smaller screens */
         padding: 5px; /* Adjust padding for smaller screens */
@@ -242,7 +243,7 @@ footer {
     }
 
     .carousel {
-        height:800px;
+        height:900px;
     }
     
 }
