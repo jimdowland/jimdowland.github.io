@@ -112,7 +112,7 @@ nav {
 
 .carousel img {
     display: none;
-    max-width: 750px;
+    width:100%;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
     object-fit: contain;
