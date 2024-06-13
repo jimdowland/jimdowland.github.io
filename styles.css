@@ -39,6 +39,15 @@ nav {
 }
 
 .hamburger-menu {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+
+.hamburger-menu {
     display: block; /* Make sure it's visible */
     cursor: pointer;
     font-size: 2.4vw; /* Responsive font size */
@@ -64,13 +73,23 @@ nav {
     display: flex;
 }
 
-.close-btn {
-    position: absolute;
-    top: 20px;
-    left: 40px;
-    font-size: 40px;
-    color: white;
+button.close-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
     cursor: pointer;
+    font-size: 24px; /* Adjust as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 20px; /* Adjust as needed */
+    left: 20px; /* Adjust as needed */
+    color:white;
+    font-size:30px;
 }
 
 #overlay-nav-links {
@@ -150,7 +169,7 @@ nav {
     text-align: center;
     margin: 10px auto;
     border-radius: 10px;
-    max-width: 80%;
+    max-width: 40%;
     font-family: 'Lato', sans-serif; /* Use Lato for paragraphs */
     font-weight: 300; /* Use Lato Light */
     line-height: 1.7em;

@@ -1,17 +1,33 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Hamburger menu functionality
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const hamburgerMenu = document.querySelector('#hamburger-menu');
     const overlayNav = document.querySelector('#overlay-nav');
     const closeBtn = document.querySelector('.close-btn');
+    const navLinks = document.querySelectorAll('#overlay-nav-links a');
 
     hamburgerMenu.addEventListener('click', () => {
         overlayNav.classList.add('active');
+        overlayNav.setAttribute('aria-hidden', 'false');
+        hamburgerMenu.setAttribute('aria-expanded', 'true');
+        closeBtn.focus(); // Move focus to the close button
     });
 
     closeBtn.addEventListener('click', () => {
         overlayNav.classList.remove('active');
+        overlayNav.setAttribute('aria-hidden', 'true');
+        hamburgerMenu.setAttribute('aria-expanded', 'false');
+        hamburgerMenu.focus(); // Move focus back to the hamburger menu
     });
 
+    // Close the overlay when a navigation link is clicked
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            overlayNav.classList.remove('active');
+            overlayNav.setAttribute('aria-hidden', 'true');
+            hamburgerMenu.setAttribute('aria-expanded', 'false');
+        });
+    });
+
+    // Initialize the first slide as active
     let currentSlide = 0;
     const slides = document.querySelectorAll('.carousel img');
     const totalSlides = slides.length;
@@ -27,9 +43,6 @@ document.addEventListener('DOMContentLoaded', function () {
         currentSlide = (currentSlide === totalSlides - 1) ? 0 : currentSlide + 1;
         slides[currentSlide].classList.add('active');
     });
-
-    // Initialize the first slide as active
-    slides[currentSlide].classList.add('active');
 
     // Swipe functionality
     let startX, startY, endX, endY;

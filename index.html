@@ -15,28 +15,28 @@
 <body>
     <header>
         <nav>
-            <div class="hamburger-menu" id="hamburger-menu">
+            <button class="hamburger-menu" id="hamburger-menu" aria-label="Open navigation menu" aria-expanded="false" aria-controls="overlay-nav">
                 ☰
-            </div>
+            </button>
         </nav>
         <div class="banner">
             <h1>James Scott</h1>
         </div>
     </header>
-    <div id="overlay-nav">
-        <div class="close-btn">&times;</div>
+    <nav id="overlay-nav" aria-hidden="true">
+        <button class="close-btn" aria-label="Close navigation">&times;</button>
         <ul id="overlay-nav-links">
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Portfolio</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
-    </div>
+    </nav>
     <main>
         <section class="portfolio-section">
             <div class="carousel-container">
-                <button class="prev" id="prev">&#10094;</button>
-                <button class="next" id="next">&#10095;</button>
+                <button aria-label="previous slide" class="prev" id="prev">&#10094;</button>
+                <button aria-label="next slide" class="next" id="next">&#10095;</button>
                 <div class="carousel" id="carousel">
                     <!-- Add your images here -->
                     <img src="assets/test3.jpg" alt="alt tag here" title="my title" class="active">
