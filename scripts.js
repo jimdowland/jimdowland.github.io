@@ -30,4 +30,37 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Initialize the first slide as active
     slides[currentSlide].classList.add('active');
+
+    // Swipe functionality
+    let startX, startY, endX, endY;
+
+    document.querySelector('.carousel').addEventListener('touchstart', (event) => {
+        startX = event.touches[0].clientX;
+        startY = event.touches[0].clientY;
+    });
+
+    document.querySelector('.carousel').addEventListener('touchmove', (event) => {
+        endX = event.touches[0].clientX;
+        endY = event.touches[0].clientY;
+    });
+
+    document.querySelector('.carousel').addEventListener('touchend', () => {
+        const diffX = endX - startX;
+        const diffY = endY - startY;
+
+        // Only consider horizontal swipes
+        if (Math.abs(diffX) > Math.abs(diffY)) {
+            if (diffX > 0) {
+                // Swipe right
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide === 0) ? totalSlides - 1 : currentSlide - 1;
+                slides[currentSlide].classList.add('active');
+            } else {
+                // Swipe left
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide === totalSlides - 1) ? 0 : currentSlide + 1;
+                slides[currentSlide].classList.add('active');
+            }
+        }
+    });
 });
