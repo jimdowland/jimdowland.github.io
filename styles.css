@@ -68,7 +68,7 @@ nav {
     position: absolute;
     top: 20px;
     left: 40px;
-    font-size: 30px;
+    font-size: 40px;
     color: white;
     cursor: pointer;
 }
@@ -94,6 +94,7 @@ nav {
 .carousel-container {
     position: relative;
     max-width: 750px;
+    padding:0 25px;
     margin: 50px auto;
     overflow: hidden;
     height: auto; /* Allow the height to adjust based on the content */
@@ -138,11 +139,11 @@ nav {
 }
 
 .prev {
-    left: 10px; /* Adjust left position as needed */
+    left: 0px; /* Adjust left position as needed */
 }
 
 .next {
-    right: 10px; /* Adjust right position as needed */
+    right: 0px; /* Adjust right position as needed */
 }
 
 .contact-section {
