@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Hamburger menu functionality
     const hamburgerMenu = document.querySelector('#hamburger-menu');
     const overlayNav = document.querySelector('#overlay-nav');
     const closeBtn = document.querySelector('.close-btn');
@@ -74,6 +75,29 @@ document.addEventListener('DOMContentLoaded', function () {
                 currentSlide = (currentSlide === totalSlides - 1) ? 0 : currentSlide + 1;
                 slides[currentSlide].classList.add('active');
             }
+        }
+    });
+
+    // Lazy load images using Intersection Observer
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src; // Swap data-src to src
+                img.removeAttribute('data-src'); // Remove the data-src attribute
+                observer.unobserve(img); // Stop observing the image
+            }
+        });
+    }, {
+        root: null, // Use the viewport as the root
+        rootMargin: '0px',
+        threshold: 0.1 // Trigger when 10% of the image is visible
+    });
+
+    // Observe each image
+    slides.forEach(img => {
+        if (img.dataset.src) { // Only observe images with data-src
+            observer.observe(img);
         }
     });
 });
