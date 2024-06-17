@@ -1,4 +1,16 @@
 document.addEventListener('DOMContentLoaded', function () {
+
+    const images = document.querySelectorAll('.carousel img');
+
+    images.forEach(img => {
+        const randomString = '?v=' + Math.random().toString(36).substring(7);
+        img.src = img.src + randomString;
+
+        img.addEventListener('load', () => {
+            img.classList.add('loaded');
+        });
+    });
+
     // Hamburger menu functionality
     const hamburgerMenu = document.querySelector('#hamburger-menu');
     const overlayNav = document.querySelector('#overlay-nav');
